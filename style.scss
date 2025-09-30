@@ -33,6 +33,7 @@ h3 {
 
 
 
+/* Первый блок */
 
 .top {
     max-height: 800px;
@@ -40,9 +41,7 @@ h3 {
 }
 .top-content {
     padding: 196px 551px 246px 0px ;
-    &__desc {
-        margin-top: 24px;
-    }
+    &__desc { margin-top: 24px; }
     &__button {
         margin-top: 48px;
         border-color: #202027;
@@ -58,41 +57,87 @@ h3 {
         font-size: 24px;
         line-height: 142%;
         text-align: center;
+        transition: 0.3s ease;
+        &:hover {
+            color: black;
+            border: 1px solid #000000;
+            background-color: #fff;
+        }
     }
 }
 
+/* Об играх */
 .about-game {
     padding-top: 94px; ;
     padding-bottom: 96px ;
     max-height: 1470px;
     background-color: #202027;
     color: white;
-    &__title {
-        color: white;
-    }
-    &__desc {
-        margin-top: 24px;
-    }
-
+    &__title { color: white; }
+    &__desc { margin-top: 24px; }
 }
+/* Об играх-Карточки */
 .cards {
     display: grid;
     gap: 32px;
     grid-template-columns: repeat(12, 1fr);
-}
-.cards__item {
-    background-color: white;
-    max-width: 378px;
-    color: #202027;
-    grid-column: 4 span;
-}
-.cards__item-small {
-    max-height: 473px;
-}
-.cards__item-big {
-    max-height: 551px;
-}
-.cards__item-norm {
-    max-height: 512px;
+    padding-top: 72px;
+    &__item {
+        display: block;
+        background: white;
+        max-width: 378px;
+        border-radius: 30px;
+        color: #202027;
+        grid-column: 4 span;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        color: inherit; 
+        position: relative;
+        z-index: 0;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgb(95, 95, 95);            
+            z-index: 5;             
+        }  
+    }
+    /* Об играх-Карточки(изображение) */
+    &__image {
+        width: 100%;
+        height: 314px;
+        border-radius: 30px;
+        background-size: cover;
+    }
+    &__image-1 { background-color: #AD61FF; } /*  */
+    &__image-2 { background-color: #FDAD00; } /* */
+    &__image-3 { background-color: #565EEF; } /*  */
+    &__image-4 { background-color: #271A58; } /*  */
+    &__image-5 { background-color: #99D100; } /*  */
+    &__image-6 { background-color: #271A58; } /*  */
+    
+    &__item-small { min-height: 473px; }
+    &__item-big { min-height: 551px; }
+    &__item-norm { min-height: 512px; }
+    /* Об играх-Карточки(Описание) */
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        padding: 32px 32px 36px 32px;
+        gap: 16px;
+    }
+    /* Об играх-Карточки(Номер) */
+    &__badge {
+        display: flex;
+        width: 108px;
+        height: 36px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #202027;
+        background: #F7F7F7;
+        align-items: center;
+        justify-content: center;
+        border-radius: 52.58px;
+    }
 }
 
