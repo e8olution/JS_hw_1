@@ -17,34 +17,35 @@ body {
   font-family: "Montserrat", "Arial";
 }
 
+/*Стили для заголовка*/
 h1 {
-  font-weight: 700;
+  font-weight: 700; /*bold*/
   font-size: 64px;
   line-height: 100%;
   color: #202027;
 }
 
 h2 {
-  font-weight: 700;
+  font-weight: bold;
   font-size: 48px;
   line-height: 100%;
   color: #202027;
 }
 
 h3 {
-  font-weight: 700;
+  font-weight: bold;
   font-size: 32px;
   line-height: 100%;
   color: #000000;
 }
 
+/*Стили для текста*/
 .text_r {
   font-size: 24px;
   font-weight: 400;
   line-height: 32px;
   color: #202027;
-}
-
+} /*normal=400*/
 .text-smb- {
   font-size: 24px;
   font-weight: 600;
@@ -54,7 +55,7 @@ h3 {
 
 .text-sm-r {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: normal;
   line-height: 32px;
   color: #202027;
 }
