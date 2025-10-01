@@ -1,4 +1,5 @@
 
+let a = 9;
+let b= 2;
 
-let result =2;
-alert(result**5);
+alert(`Остаток от деления ${a%b}`);
