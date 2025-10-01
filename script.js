@@ -1,2 +1,5 @@
-let age=Number(prompt('Сколько вам лет'));
-alert(age)
+const user ={
+    name:'Bob',
+    age: 30,
+    isAdmin: true 
+};
