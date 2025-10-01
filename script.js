@@ -1,5 +1,2 @@
 
-let a = 10;
-alert (a);
-a = 20;
-alert (a);
+let firstIphone=Number(alert('29.06.2007'));
