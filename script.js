@@ -1,2 +1,2 @@
 
-let firstIphone=Number(alert('29.06.2007'));
+let creatorJavaScript=(alert('Brendan Eich'));
