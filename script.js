@@ -1,5 +1,5 @@
-const user ={
-    name:'Bob',
-    age: 30,
-    isAdmin: true 
-};
+
+
+let name=prompt('Введите ваше имя');
+
+alert(`Привет, ${name}`);
