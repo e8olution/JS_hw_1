@@ -62,12 +62,16 @@ h3 {
 
 /* Первый блок */
 .top {
-  max-height: 800px;
+  min-height: 800px;
   background-color: #E1FF8F;
+  display: flex;
 }
 
 .top-content {
-  padding: 196px 551px 246px 0px;
+  margin-top: 196px;
+  margin-bottom: 156px;
+  max-width: 769px;
+  max-height: 358px;
 }
 .top-content__desc {
   margin-top: 24px;
@@ -97,6 +101,8 @@ h3 {
 
 /* Об играх */
 .about-game {
+  display: flex;
+  flex-direction: column;
   min-height: 1470px;
   background-color: #202027;
   color: white;
@@ -114,10 +120,11 @@ h3 {
 /* Об играх-Карточки */
 .cards {
   display: grid;
-  gap: 32px;
   grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 32px;
   padding-top: 72px;
   padding-bottom: 50px;
+  grid-auto-flow: row;
   /* Об играх-Карточки(изображение) */
   /*  */
   /* */
@@ -140,7 +147,6 @@ h3 {
   color: inherit;
   position: relative;
   z-index: 0;
-  max-height: 473px;
   box-shadow: 0px 12.61px 42.25px -7.57px rgba(0, 0, 0, 0.1294117647);
 }
 .cards__item:hover {
@@ -149,13 +155,13 @@ h3 {
   z-index: 5;
 }
 .cards__item-small {
-  min-height: 473px;
-}
-.cards__item-big {
-  min-height: 551px;
+  grid-row: span 14;
 }
 .cards__item-norm {
-  min-height: 512px;
+  grid-row: span 16;
+}
+.cards__item-big {
+  grid-row: span 18;
 }
 .cards__image {
   width: 100%;
@@ -198,4 +204,73 @@ h3 {
   align-items: center;
   justify-content: center;
   border-radius: 52.58px;
+}
+
+/* Мини-игры */
+.mini-games .mg-cards {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 32px;
+  margin-top: 46px;
+  margin-bottom: 144px;
+}
+
+.mg-item {
+  display: flex;
+  max-height: 500px;
+}
+.mg-item__info {
+  height: 100%;
+  max-width: 600px;
+  flex-direction: column;
+  padding: 48px 48px auto 48px;
+  justify-content: space-between;
+}
+.mg-item__info__title {
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+.mg-item__info__desc {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  padding-top: 24px;
+  padding-bottom: 36px;
+}
+.mg-item__info__button {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 247;
+  min-height: 66;
+  opacity: 1;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 142%;
+  letter-spacing: 0%;
+  border-radius: 60px;
+  background-color: #202027;
+  color: white;
+  transition: 0.3s ease;
+}
+.mg-item__info__button :hover {
+  color: black;
+  border: 1px solid #000000;
+  background-color: #fff;
+}
+.mg-item__image {
+  height: 100%;
+  justify-content: space-between;
+  max-width: 600px;
+  border-radius: 30px;
+  background-size: cover;
+  align-content: space-between;
 }/*# sourceMappingURL=style.css.map */

@@ -1,5 +1,5 @@
 
 
-let name=prompt('Введите ваше имя');
+//let name=prompt('Введите ваше имя');
 
-alert(`Привет, ${name}`);
+//alert(`Привет, ${name}`);
