@@ -104,15 +104,17 @@ h3 {
   display: flex;
   box-sizing: border-box;
   overflow: hidden;
-  position: absolute;
-  align-items: center;
+  width: 100%;
   max-height: 90px;
+  position: absolute;
+  top: 710px;
+  left: 0px;
+  padding: 27px 49px;
+  align-items: center;
   background: #BCEC30;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 27px 49px;
-  top: 710px;
-  left: -30px;
-  /* Размытие фона */
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
   backdrop-filter: blur(50px);
   -webkit-backdrop-filter: blur(50px);
 }
