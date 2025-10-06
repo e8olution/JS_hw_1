@@ -74,42 +74,51 @@ h3 {
     flex-direction: column;
     min-height: 1470px;
     background-color: #202027;
-    color: white;
     &__title { color: white; }
-    &__desc { margin-top: 24px; }
+    &__desc { margin-top: 24px; color: white;}
     &__content {padding-top: 94px; }
 }
 /* Об играх-Карточки */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-auto-rows: 32px;
+.ag-cards {
+    display: flex;
     padding-top: 72px;
     padding-bottom: 50px;
-    grid-auto-flow: row dense;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    &__first-block {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 32px;
+    }
+    &__second-block {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        gap: 32px;
+    }
 
     &__item {
-        display: block;
-        background: white;
-        max-width: 378px;
-        border-radius: 30px;
-        color: #202027;
-        grid-column: span 4;
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        color: inherit; 
-        position: relative;
-        z-index: 0;
-        box-shadow: 0px 12.61px 42.25px -7.57px #00000021;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    max-width: 378px;
+    border-radius: 30px;
+    color: #202027;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 0;
+    box-shadow: 0px 12.61px 42.25px -7.57px rgba(0, 0, 0, 0.1294117647);
         &:hover {
             transform: scale(1.05);
             box-shadow: 0 4px 12px rgb(95, 95, 95);            
             z-index: 5;             
         }  
     }
-    &__item-small { grid-row: span 14; }
-    &__item-norm { grid-row: span 16; }
-    &__item-big { grid-row: span 18; }
+    &__item-small { min-height: 473px; }
+    &__item-norm { min-height: 512px; }
+    &__item-big { min-height: 551px; }
 
 
     /* Об играх-Карточки(изображение) */
@@ -126,6 +135,7 @@ h3 {
 
     /* Об играх-Карточки(Описание) */
     &__info {
+        flex-grow: 1;
         display: flex;
         flex-direction: column;
         padding: 32px 32px 36px 32px;
@@ -148,87 +158,85 @@ h3 {
 }
 
 /* Мини-игры */
-
 .mini-games {
+    display: flex;
+    flex-direction: column;
+    min-height: 1470px;
     background-color: #202027;
-    display: flex;
-    flex-direction: column;
-}
-.block-game{
-    margin-top: 46px;
-    &__title{
-        color: white;
-    }
+    &__content {padding-top: 46px; }    
+    &__title { color: white; }
 }
 
+/* Мини-игры-Карточки */
 .mg-cards {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 32px;
-    margin-top: 72px;
-    margin-bottom: 144px;
-
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 72px;
+  margin-bottom: 144px;
 }
-.mg-item{
-    display: flex;
-    max-height: 500px;
-    color: #202027;
-    background-color: white;
-    &__info {
-        height: 100%;
-        max-width: 600px;
-        flex-direction: column;
-        padding: 48px 48px auto 48px;
-        justify-content: space-between;
-        &__title {  
-            font-weight: 700;
-            font-style: Bold;
-            font-size: 48px;
-            line-height: 100%;
-            letter-spacing: 0px;
-            vertical-align: middle;
-            color: white;
-        }
-        &__desc {
-            font-weight: 400;
-            font-size: 24px;
-            line-height: 32px;
-            letter-spacing: 0px;
-            vertical-align: middle;
-            padding-top: 24px;
-            padding-bottom: 36px;
-        }
-        &__button {
-            display: flex;
-            align-content: center;
-            justify-content: center;
-            text-align: center;
-            min-width: 247;
-            min-height: 66;
-            opacity: 1;
-            font-weight: 600;
-            font-size: 24px;
-            line-height: 142%;
-            letter-spacing: 0%;
-            border-radius: 60px;
-            background-color: #202027;
-            color: white;
-            transition: 0.3s ease;
-            :hover {
-                color: black;
-                border: 1px solid #000000;
-                background-color: #fff;
-            }
-        }
-    }
-    &__image{
-        height: 100%;
-        justify-content: space-between;
-        max-width:600px;
-        border-radius: 30px;
-        background-size: cover;
-        align-content: space-between;
-    }
+
+.mg-item {
+  display: flex;
+  min-height: 500px;
+  color: #202027;
+  background-color: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mg-item__left {
+  flex-direction: row;
+}
+
+.mg-item__right {
+  flex-direction: row-reverse;
+}
+
+.mg-item__info {
+  display: flex;
+  flex-direction: column;
+  padding: 48px;
+  max-width: 600px;
+}
+
+.mg-item__info__title {
+  font-weight: 700;
+  font-size: 48px;
+  color: #202027;
+}
+
+.mg-item__info__desc {
+  font-size: 24px;
+  line-height: 32px;
+  padding: 24px 0 36px;
+  color: #202027;
+}
+
+.mg-item__info__button {
+  width: 180px;
+  height: 60px;
+  border-radius: 60px;
+  background-color: #202027;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.mg-item__info__button:hover {
+  color: #202027;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+.mg-item__image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  max-height: 500px;
 }
 
