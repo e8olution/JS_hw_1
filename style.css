@@ -60,7 +60,7 @@ h3 {
   color: #202027;
 }
 
-/* Первый блок */
+/* !Первый блок */
 .top {
   min-height: 800px;
   background-color: #E1FF8F;
@@ -99,7 +99,7 @@ h3 {
   background-color: #fff;
 }
 
-/* Об играх */
+/* !Об играх */
 .about-game {
   display: flex;
   flex-direction: column;
@@ -168,15 +168,13 @@ h3 {
   min-height: 551px;
 }
 .ag-cards__image {
-  width: 100%;
-  height: 314px;
+  max-width: 378px;
+  max-height: 314px;
   border-radius: 30px;
 }
 .ag-cards__image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 .ag-cards__info {
   flex-grow: 1;
@@ -198,7 +196,7 @@ h3 {
   border-radius: 52.58px;
 }
 
-/* Мини-игры */
+/* !Мини-игры */
 .mini-games {
   display: flex;
   flex-direction: column;
@@ -212,7 +210,7 @@ h3 {
   color: white;
 }
 
-/* Мини-игры-Карточки */
+/* Мини-игры-Контент-Карточек */
 .mg-cards {
   display: flex;
   flex-direction: column;
@@ -221,6 +219,7 @@ h3 {
   margin-bottom: 144px;
 }
 
+/* Мини-игры-Карточки */
 .mg-item {
   display: flex;
   min-height: 500px;
@@ -230,35 +229,32 @@ h3 {
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
-
 .mg-item__left {
   flex-direction: row;
 }
-
 .mg-item__right {
   flex-direction: row-reverse;
 }
-
+.mg-item__image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  max-height: 500px;
+}
 .mg-item__info {
   display: flex;
   flex-direction: column;
   padding: 48px;
-  max-width: 600px;
+  width: 600px;
 }
-
 .mg-item__info__title {
   font-weight: 700;
   font-size: 48px;
   color: #202027;
 }
-
 .mg-item__info__desc {
-  font-size: 24px;
-  line-height: 32px;
   padding: 24px 0 36px;
-  color: #202027;
 }
-
 .mg-item__info__button {
   width: 180px;
   height: 60px;
@@ -271,16 +267,20 @@ h3 {
   border: none;
   transition: 0.3s ease;
 }
-
 .mg-item__info__button:hover {
   color: #202027;
   background-color: #fff;
   border: 1px solid #000;
 }
 
-.mg-item__image {
-  flex: 1;
-  background-size: cover;
-  background-position: center;
-  max-height: 500px;
+/*Подвал*/
+footer {
+  display: flex;
+  max-height: 150px;
+  background-color: #BDED35;
+  justify-content: center;
+}
+
+.footer-desc {
+  margin: 60px;
 }/*# sourceMappingURL=style.css.map */
