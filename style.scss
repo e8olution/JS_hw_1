@@ -67,6 +67,50 @@ h3 {
         }
     }
 }
+/* Первый блок-Анимация */
+.scroll-wrapper {
+
+    display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: absolute;
+    align-items: center;
+    max-height: 90px;
+    background: #BCEC30; 
+    border: 1px solid #FFFFFF33;
+    padding: 27px 49px;    
+    top: 710px;      
+    left: -30px;   
+
+    /* Размытие фона */
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+}
+
+.scroll-content {
+    display: flex;
+    gap: 51px;
+    white-space: nowrap;
+    animation: scroll-left 20s linear infinite;
+}
+
+.scroll-content span {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 4%;
+    color: #202027;
+}
+/* Анимация-бесконечная */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 
 /* !Об играх */
 .about-game {

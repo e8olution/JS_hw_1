@@ -15,14 +15,39 @@
         <div class="top-content">
             <h1>Добро пожаловать <br> на мой сайт мини-игр</h1>
             <p class="top-content__desc text_r">Тебе предстоит пройти несколько увлекательных игр.<br> Если готов, нажимай <strong>«Поехали!»</strong> и <strong >приступай.</strong></p>
-            <button class="top-content__button">Поехали!</button>
+            <button id="scrollTolets-go" class="top-content__button">Поехали!</button>
         </div>
-        <div class="animation-strip">
-
+        <div class="scroll-wrapper">
+            <div class="scroll-content">
+                <span>ВИКТОРИНА</span>
+                <img src="image/Star.svg" alt="звезда">
+                <span>УГАДАЙ ЧИСЛО</span>
+                <img src="image/Star.svg" alt="звезда">
+                <span>ПЕРЕВЕРНИ ТЕКСТ</span>
+                <img src="image/Star.svg" alt="звезда">
+                <span>ПРОСТАЯ АРИФМЕТИКА</span>
+                <img src="image/Star.svg" alt="звезда">
+                <span>КАМЕНЬ,НОЖНИЦЫ,БУМАГА</span>
+                <img src="image/Star.svg" alt="звезда">
+                <span>ГЕНЕРАТОР СЛУЧАЙНЫХ ЦВЕТОВ</span>
+                <img src="image/Star.svg" alt="звезда">
+                <span>ВИКТОРИНА</span>
+                <img src="image/Star.svg" alt="звезда">
+                <span>УГАДАЙ ЧИСЛО</span>
+                <img src="image/Star.svg" alt="звезда">
+                <span>ПЕРЕВЕРНИ ТЕКСТ</span>
+                <img src="image/Star.svg" alt="звезда">
+                <span>ПРОСТАЯ АРИФМЕТИКА</span>
+                <img src="image/Star.svg" alt="звезда">
+                <span>КАМЕНЬ,НОЖНИЦЫ,БУМАГА</span>
+                <img src="image/Star.svg" alt="звезда">
+                <span>ГЕНЕРАТОР СЛУЧАЙНЫХ ЦВЕТОВ</span>   
+                <img src="image/Star.svg" alt="звезда">
+            </div>         
         </div>  
 
     </section>
-    <section class="about-game center">
+    <section id="lets-go" class="about-game center">
         <div class="about-game__content">
             <h1 class="about-game__title">Об играх</h1>
             <p class="about-game__desc text_r">В моей коллекции представлено 6 игр на разные темы.
@@ -44,7 +69,7 @@
                     </div>
                 </a>
                 <!-- Игра_2 -->
-                <a href="game2.html" class="ag-cards__item ag-cards__item-norm">
+                <a href="#game2" class="ag-cards__item ag-cards__item-norm">
                     <div class="ag-cards__image ag-cards__image-2">
                         <img src="image/card_2.jpg" alt="Простая арифметика">
                     </div>
@@ -54,7 +79,7 @@
                     </div>
                 </a>
                 <!-- Игра_3 -->
-                <a href="game3.html" class="ag-cards__item ag-cards__item-small">
+                <a href="#game3" class="ag-cards__item ag-cards__item-small">
                     <div class="ag-cards__image">                        
                         <img src="image/card_3.jpg" alt="Переверни текст">
                     </div>
@@ -66,7 +91,7 @@
             </div>
             <div class="ag-cards__second-block">
                 <!-- Игра_4 -->
-                <a href="game4.html" class="ag-cards__item ag-cards__item-big">
+                <a href="#game4" class="ag-cards__item ag-cards__item-big">
                     <div class="ag-cards__image">                        
                         <img src="image/card_4.jpg" alt="Камень, ножницы, бумага">
                     </div>
@@ -76,7 +101,7 @@
                     </div>
                 </a>
                 <!-- Игра_5 -->
-                <a href="game5.html" class="ag-cards__item ag-cards__item-norm">
+                <a href="#game5" class="ag-cards__item ag-cards__item-norm">
                     <div class="ag-cards__image">                        
                         <img src="image/card_5.jpg" alt="Простая викторина">
                     </div>
@@ -86,7 +111,7 @@
                     </div>
                 </a>
                 <!-- Игра_6 -->
-                <a href="game6.html" class="ag-cards__item ag-cards__item-big">
+                <a href="#game6" class="ag-cards__item ag-cards__item-big">
                     <div class="ag-cards__image">                        
                         <img src="image/card_6.jpg" alt="Генератор случайных цветов">
                     </div>
@@ -105,7 +130,7 @@
         </div>    
         <div class="mg-cards">
             <!-- Игра_1 -->
-            <div class="mg-item mg-item__left">
+            <div id="game1" class="mg-item mg-item__left">
                 <div class="mg-item__info">
                     <h2 class="mg-item__info__title">Угадай число</h2>
                     <p class="mg-item__info__desc text_r">Попробуй угадать случайное<br> число от 1 до 100.</p>
@@ -117,7 +142,7 @@
                 
             </div>
             <!-- Игра_2 -->
-            <div class="mg-item mg-item__right">
+            <div id="game2" class="mg-item mg-item__right">
                 <div class="mg-item__info">
                     <h2 class="mg-item__info__title">Простая арифметика</h2>
                     <p class="mg-item__info__desc text_r">Попробуй решить простые арифметические задачи.</p>
@@ -129,7 +154,7 @@
                 
             </div>    
             <!-- Игра_3 -->
-            <div class="mg-item mg-item__left">
+            <div id="game3" class="mg-item mg-item__left">
                 <div class="mg-item__info">
                     <h2 class="mg-item__info__title">Переверни текст</h2>
                     <p class="mg-item__info__desc text_r">Попробуй ввести текст, который<br> будет перевернут.</p>
@@ -141,7 +166,7 @@
                 
             </div> 
             <!-- Игра_4 -->
-            <div class="mg-item mg-item__right">
+            <div id="game4"  class="mg-item mg-item__right">
                 <div class="mg-item__info">
                     <h3 class="mg-item__info__title">Камень, ножницы, бумага</h3>
                     <p class="mg-item__info__desc text_r">Сыграй в популярную игру<br> против компьютера.</p>
@@ -153,7 +178,7 @@
                 
             </div>
             <!-- Игра_5 -->
-            <div class="mg-item mg-item__left">
+            <div id="game5"  class="mg-item mg-item__left">
                 <div class="mg-item__info">
                     <h2 class="mg-item__info__title">Простая викторина</h2>
                     <p class="mg-item__info__desc text_r">Отвечай на вопросы викторины<br>с вариантами ответов.</p>
@@ -165,7 +190,7 @@
                 
             </div>
             <!-- Игра_6 -->
-            <div class="mg-item mg-item__right">
+            <div id="game6"  class="mg-item mg-item__right">
                 <div class="mg-item__info">
                     <h2 class="mg-item__info__title">Генератор случайных цветов</h2>
                     <p class="mg-item__info__desc text_r">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</p>
