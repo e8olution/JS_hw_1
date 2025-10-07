@@ -10,22 +10,26 @@ document.getElementById("scrollTolets-go").addEventListener("click", function() 
 
 //alert(`Привет, ${name}`);
 
-var monthNumber=prompt("Введите номер месяца")
-monthNumber = parseInt(monthNumber);
+//var monthNumber=prompt("Введите номер месяца")
+//monthNumber = parseInt(monthNumber);
 
-switch (true) {
-  case (monthNumber === 12 || monthNumber === 2 || monthNumber === 1):
-    console.log('Зима');
-    break;
-  case (monthNumber>=3 && monthNumber<=5 ):
-    console.log('Весна');
-    break; 
-  case (monthNumber>=6 && monthNumber<=8 ):
-    console.log('Лето');
-    break;     
-  case (monthNumber>=9 && monthNumber<=11 ):
-    console.log('Осень');
-    break;    
-  default:
-    console.log('такого месяца не существует');
+//switch (true) {
+//  case (monthNumber === 12 || monthNumber === 2 || monthNumber === 1):
+//    console.log('Зима');
+//    break;
+//  case (monthNumber>=3 && monthNumber<=5 ):
+//    console.log('Весна');
+//    break; 
+//  case (monthNumber>=6 && monthNumber<=8 ):
+//    console.log('Лето');
+//    break;     
+//  case (monthNumber>=9 && monthNumber<=11 ):
+//    console.log('Осень');
+//    break;    
+//  default:
+//    console.log('такого месяца не существует');
+//}
+
+for (i=0; i<2; i++) {
+  console.log("Привет");
 }
