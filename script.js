@@ -30,6 +30,6 @@ document.getElementById("scrollTolets-go").addEventListener("click", function() 
 //    console.log('такого месяца не существует');
 //}
 
-for (i=0; i<2; i++) {
-  console.log("Привет");
+for (i=1; i<=5; i++) {
+  console.log(i);
 }
