@@ -10,6 +10,7 @@ document.getElementById("scrollTolets-go").addEventListener("click", function() 
 
 //alert(`Привет, ${name}`);
 
-let d=Number(prompt('Введите 1 число'));
-let e=Number(prompt('Введите 2 число'));
-(d>100 || e>100)?console.log("Верно"):console.log("Неверно");
+let a = '2';
+let b = '3';
+// Код выше изменять менять нельзя. Чтобы решить задачу исправьте код ниже:
+alert(Number(a) + Number(b));
