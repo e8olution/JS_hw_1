@@ -10,11 +10,5 @@ document.getElementById("scrollTolets-go").addEventListener("click", function() 
 
 //alert(`Привет, ${name}`);
 
-let password='пароль';
-let answer=prompt('Введите пароль');
-if (answer===password) {
-  console.log ('Пароль введен верно!');
-}
-else {
-  console.log('Пароль введен неверно');
-} 
+let c=Number(prompt('Введите число'));
+(c>0 && c<10)?console.log("Верно"):console.log("Неверно");
