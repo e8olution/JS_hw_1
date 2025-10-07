@@ -13,8 +13,8 @@ document.getElementById("scrollTolets-go").addEventListener("click", function() 
 let password='пароль';
 let answer=prompt('Введите пароль');
 if (answer===password) {
-  console.log ("Пароль введен верно");
+  console.log ('Пароль введен верно!');
 }
 else {
-  console.log("Пароль введен неверно");
+  console.log('Пароль введен неверно');
 } 
