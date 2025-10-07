@@ -10,7 +10,22 @@ document.getElementById("scrollTolets-go").addEventListener("click", function() 
 
 //alert(`Привет, ${name}`);
 
-let a = '2';
-let b = '3';
-// Код выше изменять менять нельзя. Чтобы решить задачу исправьте код ниже:
-alert(Number(a) + Number(b));
+var monthNumber=prompt("Введите номер месяца")
+monthNumber = parseInt(monthNumber);
+
+switch (true) {
+  case (monthNumber === 12 || monthNumber === 2 || monthNumber === 1):
+    console.log('Зима');
+    break;
+  case (monthNumber>=3 && monthNumber<=5 ):
+    console.log('Весна');
+    break; 
+  case (monthNumber>=6 && monthNumber<=8 ):
+    console.log('Лето');
+    break;     
+  case (monthNumber>=9 && monthNumber<=11 ):
+    console.log('Осень');
+    break;    
+  default:
+    console.log('такого месяца не существует');
+}
