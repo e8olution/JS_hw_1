@@ -10,5 +10,6 @@ document.getElementById("scrollTolets-go").addEventListener("click", function() 
 
 //alert(`Привет, ${name}`);
 
-let c=Number(prompt('Введите число'));
-(c>0 && c<10)?console.log("Верно"):console.log("Неверно");
+let d=Number(prompt('Введите 1 число'));
+let e=Number(prompt('Введите 2 число'));
+(d>100 || e>100)?console.log("Верно"):console.log("Неверно");
