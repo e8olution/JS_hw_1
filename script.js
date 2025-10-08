@@ -4,13 +4,7 @@ document.getElementById("scrollTolets-go").addEventListener("click", function() 
 });
 
 
-let k=100;
-let iterations=0;
-
-while (k>=0) {
-  k=k-7;
-  iterations++;
+let months=["январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октрябрь","ноябрь","декабрь"];
+for (i=0; i<months.length;i++) {
+console.log(`Название месяца:${months[i]},его порядковый номер:${i+1}`);
 }
-
-console.log(k);
-console.log(iterations);
