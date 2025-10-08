@@ -3,8 +3,13 @@ document.getElementById("scrollTolets-go").addEventListener("click", function() 
   document.getElementById("lets-go").scrollIntoView({ behavior: "smooth" });
 });
 
+let book={
+  название:'Первая книга',
+  автор:'Иван Иванович',
+  год_издания:'2000',
+  жанр:'фантастика',
+}
 
-let months=["январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октрябрь","ноябрь","декабрь"];
-for (i=0; i<months.length;i++) {
-console.log(`Название месяца:${months[i]},его порядковый номер:${i+1}`);
+for (let key in book){
+  console.log(`${key}:${book[key]}`);
 }
