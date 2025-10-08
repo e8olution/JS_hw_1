@@ -30,11 +30,18 @@ document.getElementById("scrollTolets-go").addEventListener("click", function() 
 //    console.log('такого месяца не существует');
 //}
 
-let obj={
-  "Коля" : '200',
-  "Вася" : '300',
-  "Петя" : '400'
+//let obj={
+//  "Коля" : '200',
+//  "Вася" : '300',
+//  "Петя" : '400'
+//}
+//for (let key in obj) {
+//  console.log(`имя сотрудника ${key} — зарплата ${obj[key]} долларов`);
+//}
+
+let num = 0;
+for (let n = 1000; n > 50; n /= 2) {
+  console.log(n);
+  num++;
 }
-for (let key in obj) {
-  console.log(`имя сотрудника ${key} — зарплата ${obj[key]} долларов`);
-}
+console.log(num);
