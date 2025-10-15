@@ -17,27 +17,41 @@ document.querySelector('#game1 .mg-item__info__button').addEventListener('click'
   alert('Поздравляем! Вы угадали число ');
 });
 
-// Сравнение чисел (на меньшее)
-function compareNumbers(num1, num2) {
-  if (num1 === num2) {
-    alert(`Числа равны ${num1} = ${num2}`);
-  } else if (num1 < num2) {
-    alert(`Первое меньше: ${num1}`);
-  } else {
-    alert(`Второе меньше: ${num2}`);
-  }
+// // Сравнение чисел (на меньшее)
+// function compareNumbers(num1, num2) {
+//   if (num1 === num2) {
+//     alert(`Числа равны ${num1} = ${num2}`);
+//   } else if (num1 < num2) {
+//     alert(`Первое меньше: ${num1}`);
+//   } else {
+//     alert(`Второе меньше: ${num2}`);
+//   }
+// }
+
+// // теперь можно просто вызывать:
+// let a = +prompt("Введите первое число:");
+// let b = +prompt("Введите второе число:");
+
+// compareNumbers(a, b);
+
+
+// // проверка на четность
+// function evenNumber (n) {
+//   alert ( n % 2 == 0 ? `Число четное: ${n}` : `Число нечетное: ${n}`) ;
+// }
+
+// let c = +prompt("Введите число для проверки на четность:");
+
+// evenNumber(c);
+
+
+
+function sqNumber (n) {
+  let square= n**2;
+  console.log(`Квадрат числа: ${square}`); 
+  return square;
 }
 
-// теперь можно просто вызывать:
-let a = +prompt("Введите первое число:");
-let b = +prompt("Введите второе число:");
-
-compareNumbers(a, b);
-// проверка на четность
-function evenNumber (n) {
-  alert ( n % 2 == 0 ? `Число четное: ${n}` : `Число нечетное: ${n}`) ;
-}
-
-let c = +prompt("Введите число для проверки на четность:");
-
-evenNumber(c);
+let d = +prompt ("Введите число:");
+let sqResult = sqNumber(d);  
+console.log(`Используем значение квадрата дальше: ${sqResult}`);
