@@ -46,12 +46,25 @@ document.querySelector('#game1 .mg-item__info__button').addEventListener('click'
 
 
 
-function sqNumber (n) {
-  let square= n**2;
-  console.log(`Квадрат числа: ${square}`); 
-  return square;
-}
+// function sqNumber (n) {
+//   let square= n**2;
+//   console.log(`Квадрат числа: ${square}`); 
+//   return square;
+// }
 
-let d = +prompt ("Введите число:");
-let sqResult = sqNumber(d);  
-console.log(`Используем значение квадрата дальше: ${sqResult}`);
+// let d = +prompt ("Введите число:");
+// let sqResult = sqNumber(d);  
+// console.log(`Используем значение квадрата дальше: ${sqResult}`);
+
+// Сколько лет
+function howOld (years) {
+  if ( years > 0 && years < 13) {
+    alert ('Привет, друг!'); 
+  } else if ( years >= 13) { 
+    alert ('Добро пожаловать!'); 
+  } else { 
+    alert ('Вы ввели неправильное значение');
+  }
+}
+let a = +prompt ("Введите ваш возраст"); 
+howOld (a);
