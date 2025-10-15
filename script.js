@@ -70,12 +70,21 @@ document.querySelector('#game1 .mg-item__info__button').addEventListener('click'
 // howOld (a);
 
 
-// умножение чисел
-function multNumbers (num1,num2) {
-  alert ( isNaN (num1) || isNaN(num2) 
-  ? 'Одно или оба значения не являются числом' 
-  : `Умножение чисел равно : ${num1*num2}`);
+// // умножение чисел 
+// function multNumbers (num1,num2) {
+//   alert ( isNaN (num1) || isNaN(num2) 
+//   ? 'Одно или оба значения не являются числом' 
+//   : `Умножение чисел равно : ${num1*num2}`);
+// }
+// let a = prompt("Введите первое число:");
+// let b = prompt("Введите второе число:");
+// multNumbers(a,b);
+
+// Ввозвдение в куб числа (тернар)
+function multNumbers (n) {
+  alert ( isNaN (n)
+  ? 'Переданный параметр не является числом' 
+  : `n в кубе равняется: ${n**3}`);
 }
-let a = prompt("Введите первое число:");
-let b = prompt("Введите второе число:");
-multNumbers(a,b);
+let a = prompt("Введите число:");
+multNumbers(a);
