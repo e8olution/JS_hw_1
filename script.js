@@ -56,15 +56,26 @@ document.querySelector('#game1 .mg-item__info__button').addEventListener('click'
 // let sqResult = sqNumber(d);  
 // console.log(`Используем значение квадрата дальше: ${sqResult}`);
 
-// Сколько лет
-function howOld (years) {
-  if ( years > 0 && years < 13) {
-    alert ('Привет, друг!'); 
-  } else if ( years >= 13) { 
-    alert ('Добро пожаловать!'); 
-  } else { 
-    alert ('Вы ввели неправильное значение');
-  }
+// // Сколько лет
+// function howOld (years) {
+//   if ( years > 0 && years < 13) {
+//     alert ('Привет, друг!'); 
+//   } else if ( years >= 13) { 
+//     alert ('Добро пожаловать!'); 
+//   } else { 
+//     alert ('Вы ввели неправильное значение');
+//   }
+// }
+// let a = +prompt ("Введите ваш возраст"); 
+// howOld (a);
+
+
+// умножение чисел
+function multNumbers (num1,num2) {
+  alert ( isNaN (num1) || isNaN(num2) 
+  ? 'Одно или оба значения не являются числом' 
+  : `Умножение чисел равно : ${num1*num2}`);
 }
-let a = +prompt ("Введите ваш возраст"); 
-howOld (a);
+let a = prompt("Введите первое число:");
+let b = prompt("Введите второе число:");
+multNumbers(a,b);
