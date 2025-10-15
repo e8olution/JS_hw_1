@@ -33,3 +33,11 @@ let a = +prompt("Введите первое число:");
 let b = +prompt("Введите второе число:");
 
 compareNumbers(a, b);
+// проверка на четность
+function evenNumber (n) {
+  alert ( n % 2 == 0 ? `Число четное: ${n}` : `Число нечетное: ${n}`) ;
+}
+
+let c = +prompt("Введите число для проверки на четность:");
+
+evenNumber(c);
