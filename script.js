@@ -1,11 +1,12 @@
-//Анимация для Главной Первый блок
+// === Анимация для Главной Первый блок ===
 document.getElementById("scrollTolets-go").addEventListener("click", function() {
   document.getElementById("lets-go").scrollIntoView({ behavior: "smooth" });
 });
 
-// Игра «Угадай число» запускается по нажатию на кнопку
+
+// === Игра 1: «Угадай число» запускается по нажатию на кнопку === 
 document.querySelector('#game1 .mg-item__info__button').addEventListener('click', function () {
-  const getNumber = Math.floor(Math.random() * 100) + 1;
+  const getNumber = Math.round(Math.random() * 100) + 1;
   let userAnswer;
 
   while ((userAnswer = +prompt('Введите число от 1 до 100')) !== getNumber) {
@@ -17,74 +18,65 @@ document.querySelector('#game1 .mg-item__info__button').addEventListener('click'
   alert('Поздравляем! Вы угадали число ');
 });
 
-// // Сравнение чисел (на меньшее)
-// function compareNumbers(num1, num2) {
-//   if (num1 === num2) {
-//     alert(`Числа равны ${num1} = ${num2}`);
-//   } else if (num1 < num2) {
-//     alert(`Первое меньше: ${num1}`);
-//   } else {
-//     alert(`Второе меньше: ${num2}`);
-//   }
-// }
-
-// // теперь можно просто вызывать:
-// let a = +prompt("Введите первое число:");
-// let b = +prompt("Введите второе число:");
-
-// compareNumbers(a, b);
 
 
-// // проверка на четность
-// function evenNumber (n) {
-//   alert ( n % 2 == 0 ? `Число четное: ${n}` : `Число нечетное: ${n}`) ;
-// }
+// === Игра 2: Арифметика (сложение, вычитание, умножение, деление) ===
+document.querySelector('#game2 .mg-item__info__button').addEventListener('click', function () {
 
-// let c = +prompt("Введите число для проверки на четность:");
+  function getRandomNumber() {
+    return Math.round(Math.random() * 101);
+  }
 
-// evenNumber(c);
+  do {
+    // --- Сложение ---
+    let num1 = getRandomNumber();
+    let num2 = getRandomNumber();
+    let correctAddition = num1 + num2;
+    let userAddition = prompt(`Сколько будет ${num1} + ${num2}?`);
+    if (parseInt(userAddition) === correctAddition) {
+      alert("Ответ на сложение правильный!");
+    } else {
+      alert(`Неверно! Правильный ответ: ${correctAddition}`);
+    }
 
+    // --- Вычитание ---
+    let a, b;
+    do {
+      a = getRandomNumber();
+      b = getRandomNumber();
+    } while (a - b < 0);
+    let correctSubtraction = a - b;
+    let userSubtraction = prompt(`Сколько будет ${a} - ${b}?`);
+    if (parseInt(userSubtraction) === correctSubtraction) {
+      alert("Ответ на вычитание правильный!");
+    } else {
+      alert(`Неверно! Правильный ответ: ${correctSubtraction}`);
+    }
 
+    // --- Умножение ---
+    let x = getRandomNumber();
+    let y = getRandomNumber();
+    let correctMultiplication = x * y;
+    let userMultiplication = prompt(`Сколько будет ${x} × ${y}?`);
+    if (parseInt(userMultiplication) === correctMultiplication) {
+      alert("Ответ на умножение правильный!");
+    } else {
+      alert(`Неверно! Правильный ответ: ${correctMultiplication}`);
+    }
 
-// function sqNumber (n) {
-//   let square= n**2;
-//   console.log(`Квадрат числа: ${square}`); 
-//   return square;
-// }
-
-// let d = +prompt ("Введите число:");
-// let sqResult = sqNumber(d);  
-// console.log(`Используем значение квадрата дальше: ${sqResult}`);
-
-// // Сколько лет
-// function howOld (years) {
-//   if ( years > 0 && years < 13) {
-//     alert ('Привет, друг!'); 
-//   } else if ( years >= 13) { 
-//     alert ('Добро пожаловать!'); 
-//   } else { 
-//     alert ('Вы ввели неправильное значение');
-//   }
-// }
-// let a = +prompt ("Введите ваш возраст"); 
-// howOld (a);
-
-
-// // умножение чисел 
-// function multNumbers (num1,num2) {
-//   alert ( isNaN (num1) || isNaN(num2) 
-//   ? 'Одно или оба значения не являются числом' 
-//   : `Умножение чисел равно : ${num1*num2}`);
-// }
-// let a = prompt("Введите первое число:");
-// let b = prompt("Введите второе число:");
-// multNumbers(a,b);
-
-// Ввозвдение в куб числа (тернар)
-function multNumbers (n) {
-  alert ( isNaN (n)
-  ? 'Переданный параметр не является числом' 
-  : `n в кубе равняется: ${n**3}`);
-}
-let a = prompt("Введите число:");
-multNumbers(a);
+    // --- Деление ---
+    let m, n;
+    do {
+      m = getRandomNumber();
+      n = getRandomNumber();
+    } while (n === 0 || m % n !== 0);
+    let correctDivision = m / n;
+    let userDivision = prompt(`Сколько будет ${m} ÷ ${n}?`);
+    if (parseInt(userDivision) === correctDivision) {
+      alert("Ответ на деление правильный!");
+    } else {
+      alert(`Неверно! Правильный ответ: ${correctDivision}`);
+    }
+    // --- Запрос на повтор игры ---
+  } while (confirm("Хотите решить ещё?"));
+});
