@@ -112,27 +112,38 @@ document.querySelector('#game3 .mg-item__info__button').addEventListener('click'
 
 document.querySelector('#game5 .mg-item__info__button').addEventListener('click', function () {
 
+
 // Массив вопросов и правильных ответов
-       const quiz = [
-           {
-               question: "Какой цвет небо?",
-               options: ["1. Красный", "2. Синий", "3. Зеленый"],
-               correctAnswer: 2 // номер правильного ответа
-           },
-           {
-               question: "Сколько дней в неделе?",
-               options: ["1. Шесть", "2. Семь", "3. Восемь"],
-               correctAnswer: 2
-           },
-           {
-               question: "Сколько у человека пальцев на одной руке?",
-               options: ["1. Четыре", "2. Пять", "3. Шесть"],
-               correctAnswer: 2
-           }
-       ];
-
-
-        
-
-
+  const quiz = [
+      {
+          question: "Какой цвет у неба?",
+          options: ["1. Красный", "2. Синий", "3. Зеленый"],
+          correctAnswer: 2 // номер правильного ответа
+      },
+      {
+          question: "Сколько дней в неделе?",
+          options: ["1. Шесть", "2. Семь", "3. Восемь"],
+          correctAnswer: 2
+      },
+      {
+          question: "Сколько у человека пальцев на одной руке?",
+          options: ["1. Четыре", "2. Пять", "3. Шесть"],
+          correctAnswer: 2
+      }
+  ];
+  // Переменная для подсчета правильных ответов
+  let score = 0;
+  // Проходим по каждому вопросу
+  for (let i = 0; i < quiz.length; i++) {
+      const currentQuestion = quiz[i];
+      // Запрос ответа у пользователя
+      const userAnswer = prompt(`${currentQuestion.question}\n${currentQuestion.options.join('\n')}`);
+      
+      // Проверка правильности ответа
+      if (parseInt(userAnswer) === currentQuestion.correctAnswer) {
+          score++; // увеличиваем счетчик правильных ответов
+      }
+  }
+  // Вывод результата
+  alert(`Вы ответили правильно на ${score} из ${quiz.length} вопросов!`);
 });
