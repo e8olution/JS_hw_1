@@ -84,9 +84,25 @@ document.querySelector('#game2 .mg-item__info__button').addEventListener('click'
 // === Игра 3: Переверни текст  ===
 
 document.querySelector('#game3 .mg-item__info__button').addEventListener('click', function () {
-  function invertedword () {
 
+  function invertedWord(word) {
+      let letters = word.toLowerCase().split(''); // переводим в нижний регистр и разбиваем на массив
+      for (let i = letters.length - 1; i > 0; i--) {
+          // перемешиваем методом Фишера-Йейтса
+          const j = Math.floor(Math.random() * (i + 1));
+          [letters[i], letters[j]] = [letters[j], letters[i]];
+      }
+      return letters.join(''); // собираем обратно в строку
   }
-  let 
 
+  // Запрос слова у пользователя
+  const userWord = prompt("Введите слово:");
+
+  // Вывод перемешанного слова
+  if (userWord) {
+      const inverted = invertedWord(userWord);
+      alert(`Ваше перемешанное слово: ${inverted}`);
+  } else {
+      alert("Вы не ввели слово!");
+  }
 });
