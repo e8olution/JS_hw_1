@@ -80,3 +80,13 @@ document.querySelector('#game2 .mg-item__info__button').addEventListener('click'
     // --- Запрос на повтор игры ---
   } while (confirm("Хотите решить ещё?"));
 });
+
+// === Игра 3: Переверни текст  ===
+
+document.querySelector('#game3 .mg-item__info__button').addEventListener('click', function () {
+  function invertedword () {
+
+  }
+  let 
+
+});
