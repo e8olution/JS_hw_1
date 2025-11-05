@@ -4,6 +4,7 @@ document.getElementById("scrollTolets-go").addEventListener("click", function() 
 });
 
 
+
 // === Игра 1: «Угадай число» запускается по нажатию на кнопку === 
 document.querySelector('#game1 .mg-item__info__button').addEventListener('click', function () {
   const getNumber = Math.round(Math.random() * 100) + 1;
@@ -81,6 +82,8 @@ document.querySelector('#game2 .mg-item__info__button').addEventListener('click'
   } while (confirm("Хотите решить ещё?"));
 });
 
+
+
 // === Игра 3: Переверни текст  ===
 
 document.querySelector('#game3 .mg-item__info__button').addEventListener('click', function () {
@@ -106,6 +109,46 @@ document.querySelector('#game3 .mg-item__info__button').addEventListener('click'
       alert("Вы не ввели слово!");
   }
 });
+
+
+
+// === Игра 4: Камень, Ножницы, Бумага ===
+
+document.querySelector('#game4 .mg-item__info__button').addEventListener('click', function playGame () {
+  const options = ["камень", "ножницы", "бумага"] ;
+
+  function theWinner (userChoice,compChoice){
+    if (userChoice === compChoice) return "Ничья!";
+    if (
+      (userChoice === "камень" && compChoice === "ножницы") ||
+      (userChoice === "ножницы" && compChoice === "бумага") ||
+      (userChoice === "бумага" && compChoice === "камень")
+    ) return "Вы победили!";
+    return "Компьютер победил!";
+ }
+
+  let playAgain = true;
+
+  while (playAgain) {
+    let userChoice = prompt("Выберите: камень, ножницы или бумага");
+    if (!userChoice) break; // пользователь нажал Отмена
+
+    userChoice = userChoice.toLowerCase();
+
+    if (!options.includes(userChoice)) {
+      alert("Неверный выбор! Попробуйте снова.");
+      continue; // повторяем цикл
+    }
+
+    const compChoice = options[Math.floor(Math.random() * options.length)];
+    const resultGame = theWinner(userChoice, compChoice);
+
+    alert(`Вы выбрали: ${userChoice}\nКомпьютер выбрал: ${compChoice}\nРезультат: ${resultGame}`);
+
+    playAgain = confirm("Сыграть ещё?");
+  }
+});
+
 
 
 // === Игра 5: Простая викторина  ===
@@ -146,4 +189,59 @@ document.querySelector('#game5 .mg-item__info__button').addEventListener('click'
   }
   // Вывод результата
   alert(`Вы ответили правильно на ${score} из ${quiz.length} вопросов!`);
+});
+
+
+
+// === Игра Тест: Прогресс-бар  ===
+
+document.querySelector('#game6 .mg-item__info__button').addEventListener('click', function () {
+
+
+    // Функция, имитирующая завершение загрузки файла
+  function uploadCompleted() {
+    console.log ("Загрузка файла успешно завершена. ");
+
+    // Имитация обработки файла 
+    console.log ("Обработка файла...") ;
+    setTimeout (() => {
+      console.log ("Файл обработан.") ;
+
+      // Имитация сохранения файла
+      console.log ("Сохранение файла...") ;
+      setTimeout ( () => {
+        console.log ("Файл успешно сохранен. Файл готов к использованию!");
+      }, 1000); // Имитация задержки сохранения файла
+
+    }, 2000); // Имитация задержки обработки файла
+  }
+
+  function startUpload (callback) {
+
+    console.log ("Начало загрузки файла...") ;
+    
+    let progress = 0;
+    const intervalId = setInterval (() => {
+      // Имитация процесса загрузки
+      progress += Math.floor(Math.random() * 10) + 5; // Увеличиваем прогресс
+      // на случайное значение от 5 до 15
+
+      if (progress > 100){
+        progress = 100;
+      }
+
+      console.log (`Прогресс: ${progress}%`);
+
+      if (progress === 100) {
+        clearInterval(intervalId); // Останавливаем интервал
+        console.log ("Загрузка файла завершена!") ;
+        if (callback) {
+            callback(); // Вызываем callback после завершения
+        }
+      }
+    }, 2000); // Обновляем прогресс каждые 2 секунды
+  }        
+
+  // Запуск функции с отдельной функцией обратного вызова
+  startUpload (uploadCompleted) ;
 });
