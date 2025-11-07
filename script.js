@@ -155,93 +155,132 @@ document.querySelector('#game4 .mg-item__info__button').addEventListener('click'
 
 document.querySelector('#game5 .mg-item__info__button').addEventListener('click', function () {
 
-
-// Массив вопросов и правильных ответов
+  // Массив вопросов и правильных ответов
   const quiz = [
-      {
-          question: "Какой цвет у неба?",
-          options: ["1. Красный", "2. Синий", "3. Зеленый"],
-          correctAnswer: 2 // номер правильного ответа
-      },
-      {
-          question: "Сколько дней в неделе?",
-          options: ["1. Шесть", "2. Семь", "3. Восемь"],
-          correctAnswer: 2
-      },
-      {
-          question: "Сколько у человека пальцев на одной руке?",
-          options: ["1. Четыре", "2. Пять", "3. Шесть"],
-          correctAnswer: 2
-      }
+    {
+      question: "Какой цвет у неба?",
+      options: ["1. Красный", "2. Синий", "3. Зеленый"],
+      correctAnswer: 2,
+      correctText: "синий"
+    },
+    {
+      question: "Сколько дней в неделе?",
+      options: ["1. Шесть", "2. Семь", "3. Восемь"],
+      correctAnswer: 2,
+      correctText: "семь"
+    },
+    {
+      question: "Сколько у человека пальцев на одной руке?",
+      options: ["1. Четыре", "2. Пять", "3. Шесть"],
+      correctAnswer: 2,
+      correctText: "пять"
+    }
   ];
-  // Переменная для подсчета правильных ответов
+
   let score = 0;
-  // Проходим по каждому вопросу
+
   for (let i = 0; i < quiz.length; i++) {
-      const currentQuestion = quiz[i];
-      // Запрос ответа у пользователя
-      const userAnswer = prompt(`${currentQuestion.question}\n${currentQuestion.options.join('\n')}`);
-      
-      // Проверка правильности ответа
-      if (parseInt(userAnswer) === currentQuestion.correctAnswer) {
-          score++; // увеличиваем счетчик правильных ответов
-      }
+    const currentQuestion = quiz[i];
+    
+    let userAnswer = prompt(`${currentQuestion.question}\n${currentQuestion.options.join('\n')}`);
+    if (!userAnswer) continue; // если пользователь нажал "Отмена" — пропускаем
+    
+    // Приводим ответ к нижнему регистру и убираем пробелы
+    userAnswer = userAnswer.trim().toLowerCase();
+
+    // Проверяем: если ответ — цифра
+    if (parseInt(userAnswer) === currentQuestion.correctAnswer) {
+      score++;
+    } 
+    // Проверяем: если ответ — слово
+    else if (userAnswer === currentQuestion.correctText.toLowerCase()) {
+      score++;
+    }
   }
-  // Вывод результата
+
   alert(`Вы ответили правильно на ${score} из ${quiz.length} вопросов!`);
 });
 
 
+// // === Игра Тест: Прогресс-бар  ===
 
-// === Игра Тест: Прогресс-бар  ===
+// document.querySelector('#game6 .mg-item__info__button').addEventListener('click', function () {
+
+
+//     // Функция, имитирующая завершение загрузки файла
+//   function uploadCompleted() {
+//     console.log ("Загрузка файла успешно завершена. ");
+
+//     // Имитация обработки файла 
+//     console.log ("Обработка файла...") ;
+//     setTimeout (() => {
+//       console.log ("Файл обработан.") ;
+
+//       // Имитация сохранения файла
+//       console.log ("Сохранение файла...") ;
+//       setTimeout ( () => {
+//         console.log ("Файл успешно сохранен. Файл готов к использованию!");
+//       }, 1000); // Имитация задержки сохранения файла
+
+//     }, 2000); // Имитация задержки обработки файла
+//   }
+
+//   function startUpload (callback) {
+
+//     console.log ("Начало загрузки файла...") ;
+    
+//     let progress = 0;
+//     const intervalId = setInterval (() => {
+//       // Имитация процесса загрузки
+//       progress += Math.floor(Math.random() * 10) + 5; // Увеличиваем прогресс
+//       // на случайное значение от 5 до 15
+
+//       if (progress > 100){
+//         progress = 100;
+//       }
+
+//       console.log (`Прогресс: ${progress}%`);
+
+//       if (progress === 100) {
+//         clearInterval(intervalId); // Останавливаем интервал
+//         console.log ("Загрузка файла завершена!") ;
+//         if (callback) {
+//             callback(); // Вызываем callback после завершения
+//         }
+//       }
+//     }, 2000); // Обновляем прогресс каждые 2 секунды
+//   }        
+
+//   // Запуск функции с отдельной функцией обратного вызова
+//   startUpload (uploadCompleted) ;
+// });
+
+// === Игра 6: Генератор случайных цветов ===
 
 document.querySelector('#game6 .mg-item__info__button').addEventListener('click', function () {
-
-
-    // Функция, имитирующая завершение загрузки файла
-  function uploadCompleted() {
-    console.log ("Загрузка файла успешно завершена. ");
-
-    // Имитация обработки файла 
-    console.log ("Обработка файла...") ;
-    setTimeout (() => {
-      console.log ("Файл обработан.") ;
-
-      // Имитация сохранения файла
-      console.log ("Сохранение файла...") ;
-      setTimeout ( () => {
-        console.log ("Файл успешно сохранен. Файл готов к использованию!");
-      }, 1000); // Имитация задержки сохранения файла
-
-    }, 2000); // Имитация задержки обработки файла
+  
+  // Функция для генерации случайного цвета в формате HEX
+  function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
   }
 
-  function startUpload (callback) {
+  // Получаем случайный цвет
+  const randomColor = getRandomColor();
 
-    console.log ("Начало загрузки файла...") ;
-    
-    let progress = 0;
-    const intervalId = setInterval (() => {
-      // Имитация процесса загрузки
-      progress += Math.floor(Math.random() * 10) + 5; // Увеличиваем прогресс
-      // на случайное значение от 5 до 15
+  // Меняем фон всей страницы
+  document.documentElement.style.backgroundColor = randomColor;
+  document.body.style.backgroundColor = randomColor;
 
-      if (progress > 100){
-        progress = 100;
-      }
-
-      console.log (`Прогресс: ${progress}%`);
-
-      if (progress === 100) {
-        clearInterval(intervalId); // Останавливаем интервал
-        console.log ("Загрузка файла завершена!") ;
-        if (callback) {
-            callback(); // Вызываем callback после завершения
-        }
-      }
-    }, 2000); // Обновляем прогресс каждые 2 секунды
-  }        
-
-  // Запуск функции с отдельной функцией обратного вызова
-  startUpload (uploadCompleted) ;
+  // Показываем код нового цвета
+  alert(`Цвет фона изменён на: ${randomColor}`);
 });
+
+
+// Начало темы DOM -----------------------------------------------------------------------------
+
+
