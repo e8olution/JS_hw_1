@@ -283,4 +283,18 @@ document.querySelector('#game6 .mg-item__info__button').addEventListener('click'
 
 // Начало темы DOM -----------------------------------------------------------------------------
 
+const elementH1 = document.querySelector('.testH1');
+const buttonTest = document.querySelector('.testBut');
+buttonTest.style.cssText = `
+    width: 200px;
+    height: 100px;
+    background-color: yellow;
+    padding: 10px 20px;
+    border-radius: 10px; 
+    margin-left:100px;
+`;
 
+
+buttonTest.addEventListener('click', function() {
+  elementH1.textContent = "New text for you my sweetheart";
+});
