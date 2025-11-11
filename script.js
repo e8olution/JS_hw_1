@@ -282,19 +282,56 @@ document.querySelector('#game6 .mg-item__info__button').addEventListener('click'
 
 
 // Начало темы DOM -----------------------------------------------------------------------------
+// (1) Изменение видимости элемента (вкл,выкл)
+const style = document.createElement('style');
+style.textContent = `
+  .hidden {
+    display: none;
+  }
+`;
+document.head.append(style);
 
+// Поиск абзатца 
 const elementH1 = document.querySelector('.testH1');
-const buttonTest = document.querySelector('.testBut');
+// Поиск Кнопки 
+const buttonTest = document.querySelector('.testBut');  
+// Изменение стиля Кнопки 
 buttonTest.style.cssText = `
     width: 200px;
     height: 100px;
     background-color: yellow;
     padding: 10px 20px;
     border-radius: 10px; 
-    margin-left:100px;
+    margin-left: 100px;
+    
 `;
 
+// (4 + 5) Поиск и изменение элементов по классу, Работа с querySelectorAll
+const searchDesc= document.querySelectorAll(".description");
 
+searchDesc.forEach(description => {
+  description.textContent = "Новый текст";
+});
+
+// Действия 
 buttonTest.addEventListener('click', function() {
-  elementH1.textContent = "New text for you my sweetheart";
+
+// (3) Изменение текста заголовка
+  elementH1.textContent = "Привет мир";
+
+// (1) Изменение видимости элемента (вкл,выкл)
+  elementH1.classList.toggle('hidden');
+
+// (2) Изменение цвета текста
+  elementH1.style.color= 'blue';
+
+// (6) Добавление нового элемента в DOM
+  const newP = document.createElement('p');
+  newP.textContent = 'new text';
+  document.body.appendChild(newP);
+
+// (7) Добавление нового элемента в DOM
+	const searchFirst = document.querySelector('.description');
+	searchFirst.remove();
+
 });
