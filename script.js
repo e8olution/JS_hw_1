@@ -202,64 +202,34 @@ document.querySelector('#game5 .mg-item__info__button').addEventListener('click'
 });
 
 
-// // === Игра Тест: Прогресс-бар  ===
-
-// document.querySelector('#game6 .mg-item__info__button').addEventListener('click', function () {
-
-
-//     // Функция, имитирующая завершение загрузки файла
-//   function uploadCompleted() {
-//     console.log ("Загрузка файла успешно завершена. ");
-
-//     // Имитация обработки файла 
-//     console.log ("Обработка файла...") ;
-//     setTimeout (() => {
-//       console.log ("Файл обработан.") ;
-
-//       // Имитация сохранения файла
-//       console.log ("Сохранение файла...") ;
-//       setTimeout ( () => {
-//         console.log ("Файл успешно сохранен. Файл готов к использованию!");
-//       }, 1000); // Имитация задержки сохранения файла
-
-//     }, 2000); // Имитация задержки обработки файла
-//   }
-
-//   function startUpload (callback) {
-
-//     console.log ("Начало загрузки файла...") ;
-    
-//     let progress = 0;
-//     const intervalId = setInterval (() => {
-//       // Имитация процесса загрузки
-//       progress += Math.floor(Math.random() * 10) + 5; // Увеличиваем прогресс
-//       // на случайное значение от 5 до 15
-
-//       if (progress > 100){
-//         progress = 100;
-//       }
-
-//       console.log (`Прогресс: ${progress}%`);
-
-//       if (progress === 100) {
-//         clearInterval(intervalId); // Останавливаем интервал
-//         console.log ("Загрузка файла завершена!") ;
-//         if (callback) {
-//             callback(); // Вызываем callback после завершения
-//         }
-//       }
-//     }, 2000); // Обновляем прогресс каждые 2 секунды
-//   }        
-
-//   // Запуск функции с отдельной функцией обратного вызова
-//   startUpload (uploadCompleted) ;
-// });
-
 // === Игра 6: Генератор случайных цветов ===
 
 document.querySelector('#game6 .mg-item__info__button').addEventListener('click', function () {
   
-  // Функция для генерации случайного цвета в формате HEX
+  // Создаём слой
+  const layer = document.createElement('div');
+  layer.id = 'color-layer';
+  document.body.appendChild(layer);
+
+  // Стили для вспышки
+  layer.style.position = 'fixed';
+  layer.style.inset = '0';
+  layer.style.backgroundColor = getRandomColor();
+  layer.style.zIndex = '9999'; // поверх всего
+  layer.style.opacity = '1';
+  layer.style.transition = 'opacity 0.5s ease';
+  
+  // Через 1 секунду — начинаем затухание
+  setTimeout(() => {
+    layer.style.opacity = '0'; // плавное исчезновение
+  }, 1000);
+
+  // Через 2 секунды — удаляем элемент
+  setTimeout(() => {
+    layer.remove();
+  }, 2000);
+
+  // Функция случайного цвета
   function getRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
@@ -268,17 +238,8 @@ document.querySelector('#game6 .mg-item__info__button').addEventListener('click'
     }
     return color;
   }
-
-  // Получаем случайный цвет
-  const randomColor = getRandomColor();
-
-  // Меняем фон всей страницы
-  document.documentElement.style.backgroundColor = randomColor;
-  document.body.style.backgroundColor = randomColor;
-
-  // Показываем код нового цвета
-  alert(`Цвет фона изменён на: ${randomColor}`);
 });
+
 
 
 // Начало темы DOM -----------------------------------------------------------------------------
